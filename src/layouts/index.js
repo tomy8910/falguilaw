@@ -24,11 +24,6 @@ const TemplateWrapper = ({ children }) => (
         href="https://fonts.googleapis.com/css?family=Cardo:400i|Montserrat:400,500,600,700"
         rel="stylesheet"
       />
-      <link
-        rel="stylesheet"
-        href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
-      />
-
       <meta name="description" content="Sample" />
       <meta name="keywords" content="sample, something" />
     </Helmet>

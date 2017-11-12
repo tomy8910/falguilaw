@@ -46,8 +46,16 @@ export const HeaderStyle = styled.header`
       padding: 10px;
       margin: 10px;
     }
+
+    .header__special-svg {
+      width: 15%;
+    }
+    .header__special-close-svg {
+      width: 8%;
+    }
     .header__special-item--close {
       padding: 40px;
+      text-align: center;
     }
     .header__special-main {
       text-align: right;

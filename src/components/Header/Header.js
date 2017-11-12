@@ -41,14 +41,54 @@ export default class Header extends Component {
                 ref={item => (this.click = item)}
                 onClick={this.toggleNavMenu}
               >
-                <span className="ion-navicon-round" />
+                <svg
+                  viewBox="0 0 47 36"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  strokeLinecap="round"
+                  strokeLinejoin="bevel"
+                  strokeMiterlimit={1.5}
+                  className="header__special-svg"
+                >
+                  <path d="M3 3h41" fill="none" stroke="#000" strokeWidth={6} />
+                  <path
+                    d="M3 18h41"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth={6}
+                    strokeLinejoin="miter"
+                  />
+                  <path
+                    d="M3 33h41"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth={6}
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </div>
               <div
                 className="header__special-hide js--reveal"
                 ref={item => (this.reveal = item)}
                 onClick={this.toggleNavMenu}
               >
-                <div className="header__special-item ion-close-round header__special-item--close js--hide" />
+                <div className="header__special-item header__special-item--close js--hide">
+                  <svg
+                    viewBox="0 0 25 25"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    strokeLinecap="round"
+                    strokeMiterlimit={1.5}
+                    className="header__special-close-svg"
+                  >
+                    <path
+                      d="M3.153 4.332l18.694 17.336m-18.694 0L21.847 4.332"
+                      fill="none"
+                      stroke="#000"
+                      strokeWidth={6}
+                    />
+                  </svg>
+                </div>
                 <div className="header__special-item" tabIndex="-1">
                   <Link className="header__special-link" to="/about/">
                     about
