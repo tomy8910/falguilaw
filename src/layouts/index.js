@@ -21,13 +21,14 @@ const TemplateWrapper = ({ children }) => (
     <Helmet>
       <title>Falgui Law Office</title>
       <link
-        href="https://fonts.googleapis.com/css?family=Cardo:400,400i|Crimson+Text|Montserrat:400,500,600,700,800,900"
+        href="https://fonts.googleapis.com/css?family=Cardo:400i|Montserrat:400,500,600,700"
         rel="stylesheet"
       />
       <link
-        href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
         rel="stylesheet"
+        href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
       />
+
       <meta name="description" content="Sample" />
       <meta name="keywords" content="sample, something" />
     </Helmet>

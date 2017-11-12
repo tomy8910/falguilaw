@@ -21,7 +21,7 @@ export const HeaderStyle = styled.header`
       transform: translateX(-500%);
       transition: transform 0.9s ease-in-out;
       text-transform: uppercase;
-      font-weight: 300;
+      font-weight: 400;
       letter-spacing: 2px;
       top: 0;
       left: 0;
@@ -105,9 +105,9 @@ export const HeaderStyle = styled.header`
     text-decoration: none;
     font-size: 1.7rem;
     width: 100%;
-    /*font-weight: 300;*/
+
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 2px;
     color: #121212;
     display: block;
