@@ -17,8 +17,12 @@ export const HeaderStyle = styled.header`
     }
     .header__special-hide {
       position: absolute;
+      z-index: 99999;
       transform: translateX(-500%);
       transition: transform 0.9s ease-in-out;
+      text-transform: uppercase;
+      font-weight: 300;
+      letter-spacing: 2px;
       top: 0;
       left: 0;
       bottom: 0;
@@ -29,7 +33,7 @@ export const HeaderStyle = styled.header`
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      font-size: 4rem;
+      font-size: 2.5rem;
     }
     .header__special-link {
       color: #333;
@@ -99,9 +103,12 @@ export const HeaderStyle = styled.header`
   }
   .header__nav-link {
     text-decoration: none;
-    font-size: 2.6rem;
+    font-size: 1.7rem;
     width: 100%;
     /*font-weight: 300;*/
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 2px;
     color: #121212;
     display: block;
 
