@@ -47,6 +47,7 @@ export const HeaderStyle = styled.header`
     }
     .header__special-main {
       text-align: right;
+      cursor: pointer;
       width: 100%;
       font-size: 3rem;
       padding: 10px;

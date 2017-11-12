@@ -1,10 +1,32 @@
 import React, { Component } from 'react'
-import { ContactStyles } from './Contact.style'
+import { ContactStyles, Label } from './Contact.style'
 
 export default class Contact extends Component {
+  state = {
+    input1: '',
+    input2: '',
+    input3: ''
+  }
+  onChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
   render() {
+    const { input1, input2, input3 } = this.state
     return (
       <ContactStyles>
+        <div className="contact__card">
+          <h1 className="card__header">Our Address</h1>
+          <address className="card__address">
+            <p className="card__address-line">Falgui Law Offices</p>
+            <p className="card__address-line">2nd Floor, Falgui Building</p>
+            <p className="card__address-line">National Highway</p>
+            <p className="card__address-line">General Santos City</p>
+            <p className="card__address-line">9500 South Cotabato</p>
+            <p className="card__address-line">Philippines</p>
+          </address>
+        </div>
         <div className="contact__card">
           <h1 className="card__header">Our Location</h1>
           <figure className="card__image-container">
@@ -14,27 +36,47 @@ export default class Contact extends Component {
               className="card__image"
             />
           </figure>
-          <address className="card__address">Address Here</address>
         </div>
         <form className="contact__form">
-          <h1 className="form__header">How may we help you?</h1>
+          <h1 className="form__header">Contact Us</h1>
           <div className="form__input-container form__name">
-            <label htmlFor="name" className="form__label">
+            <input
+              type="text"
+              id="name"
+              className="form__input"
+              value={input1}
+              name="input1"
+              onChange={this.onChange}
+            />
+            <Label htmlFor="name" full={input1 !== ''}>
               Name
-            </label>
-            <input type="text" id="name" className="form__input" />
+            </Label>
           </div>
           <div className="form__input-container form__email">
-            <label htmlFor="email" className="form__label">
+            <input
+              type="email"
+              id="email"
+              className="form__input"
+              value={input2}
+              name="input2"
+              onChange={this.onChange}
+            />
+            <Label htmlFor="email" full={input2 !== ''}>
               Email
-            </label>
-            <input type="email" id="email" className="form__input" />
+            </Label>
           </div>
-          <div className="form__input-container form__number">
-            <label htmlFor="" htmlFor="number" className="form__label">
-              Contact #
-            </label>
-            <input type="text" id="number" className="form__input" />
+          <div className="form__input-container form__number form__input-container--more-bot">
+            <input
+              type="text"
+              id="number"
+              className="form__input"
+              name="input3"
+              value={input3}
+              onChange={this.onChange}
+            />
+            <Label htmlFor="number" full={input3 !== ''}>
+              Contact
+            </Label>
           </div>
           <button type="submit" className="form__submit">
             Send Message

@@ -49,17 +49,17 @@ export default class Header extends Component {
                 onClick={this.toggleNavMenu}
               >
                 <div className="header__special-item ion-close-round header__special-item--close js--hide" />
-                <div className="header__special-item">
+                <div className="header__special-item" tabIndex="-1">
                   <Link className="header__special-link" to="/about/">
                     about
                   </Link>
                 </div>
-                <div className="header__special-item">
+                <div className="header__special-item" tabIndex="-1">
                   <Link className="header__special-link" to="/practice/">
                     areas
                   </Link>
                 </div>
-                <div className="header__special-item">
+                <div className="header__special-item" tabIndex="-1">
                   <Link className="header__special-link" to="/contact/">
                     contact
                   </Link>
