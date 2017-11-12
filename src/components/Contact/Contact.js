@@ -1,12 +1,30 @@
 import React, { Component } from 'react'
 import { ContactStyles, Label } from './Contact.style'
 
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
 export default class Contact extends Component {
   state = {
     input1: '',
     input2: '',
     input3: ''
   }
+
+  handleSubmit = e => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...this.state })
+    })
+      .then(() => alert('Success!'))
+      .catch(error => alert(error))
+
+    e.preventDefault()
+  }
+
   onChange = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -37,7 +55,15 @@ export default class Contact extends Component {
             />
           </figure>
         </div>
-        <form className="contact__form">
+        <form
+          className="contact__form"
+          name="contact"
+          method="post"
+          action="/thanks/"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={this.handleSubmit}
+        >
           <h1 className="form__header">Contact Us</h1>
           <div className="form__input-container form__name">
             <input
