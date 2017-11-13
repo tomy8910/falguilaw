@@ -5,6 +5,8 @@ import Helmet from 'react-helmet'
 import Header from '../components/Header/Header'
 import styled, { injectGlobal } from 'styled-components'
 import Footer from '../components/Footer/Footer'
+import WebFont from 'webfontloader'
+import favicon from '../favicon.ico'
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,24 +18,33 @@ const Wrapper = styled.div`
   }
 `
 
-const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet>
-      <title>Falgui Law Office</title>
-      <link
-        href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,900"
-        rel="stylesheet"
-      />
-      <meta name="description" content="Sample" />
-      <meta name="keywords" content="sample, something" />
-    </Helmet>
-    <Wrapper>
-      <Header />
-      {children()}
-      <Footer />
-    </Wrapper>
-  </div>
-)
+class TemplateWrapper extends React.Component {
+  componentDidMount() {
+    WebFont.load({
+      google: {
+        families: ['Montserrat:400,400italic,500,900']
+      }
+    })
+  }
+  render() {
+    return (
+      <div>
+        <Helmet>
+          <title>Falgui Law Office</title>
+          <meta name="description" content="Sample" />
+          <meta name="keywords" content="sample, something" />
+          <link rel="shortcut icon" href={favicon} type="image/x-icon" />
+          <link rel="icon" href={favicon} type="image/x-icon" />
+        </Helmet>
+        <Wrapper>
+          <Header />
+          {this.props.children()}
+          <Footer />
+        </Wrapper>
+      </div>
+    )
+  }
+}
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func
