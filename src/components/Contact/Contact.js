@@ -27,9 +27,18 @@ export default class Contact extends Component {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...this.state })
     })
-      .then(() => this.setState({ open: true }))
+      .then(() =>
+        this.setState({
+          open: true,
+          input1: '',
+          input2: '',
+          input3: '',
+          input4: ''
+        })
+      )
       .catch(error => alert(error))
 
+    e.preventDefault()
     e.preventDefault()
   }
 

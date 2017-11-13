@@ -6,7 +6,7 @@ export const HeaderStyle = styled.header`
   .header__special {
     display: none;
   }
-  @media (max-width: 50em) {
+  @media (max-width: 50.75em) {
     .header__special {
       display: flex;
       background-color: #d9d9d9;
@@ -48,7 +48,7 @@ export const HeaderStyle = styled.header`
     }
 
     .header__special-svg {
-      width: 15%;
+      width: 20px;
     }
     .header__special-close-svg {
       width: 8%;
@@ -72,7 +72,7 @@ export const HeaderStyle = styled.header`
   .header__nav {
     padding: 0 8rem;
   }
-  @media (max-width: 50em) {
+  @media (max-width: 50.75em) {
     .header__nav {
       padding: 0 4rem;
     }
@@ -87,7 +87,7 @@ export const HeaderStyle = styled.header`
 
     justify-content: center;
   }
-  @media (max-width: 50em) {
+  @media (max-width: 50.75em) {
     .header__nav-list {
       justify-content: space-between;
     }
@@ -99,7 +99,7 @@ export const HeaderStyle = styled.header`
     margin-right: auto;
   }
 
-  @media (max-width: 50em) {
+  @media (max-width: 50.75em) {
     .header__nav-item--disappear {
       display: none;
     }
@@ -129,7 +129,7 @@ export const HeaderStyle = styled.header`
     max-width: 70%;
     height: auto;
   }
-  @media (max-width: 50em) {
+  @media (max-width: 50.75em) {
     .header__nav-link--logo {
       max-width: 100%;
     }

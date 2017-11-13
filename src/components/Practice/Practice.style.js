@@ -15,6 +15,7 @@ export const PracticeStyles = styled.section`
     font-weight: 400;
     margin: 0;
     font-size: 4rem;
+    font-weight: 900;
   }
   .practice__description {
     font-size: 2rem;

@@ -41,6 +41,7 @@ export const AboutStyles = styled.main`
   .about__content-header {
     font-family: 'Montserrat';
     font-weight: 400;
+    font-weight: 900;
     margin-bottom: 0.5rem;
   }
 

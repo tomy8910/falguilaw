@@ -5,6 +5,12 @@ export const ContactStyles = styled.section`
   display: flex;
   flex-direction: column;
   color: #333;
+  @media (min-width: 50em) {
+    display: block;
+
+    .contact__form {
+    }
+  }
 
   .contact__card {
     display: flex;
@@ -17,7 +23,7 @@ export const ContactStyles = styled.section`
     margin: 0;
     margin-bottom: 1rem;
     font-size: 3rem;
-
+    font-weight: 900;
     &::after {
       content: '';
       display: block;
@@ -101,6 +107,7 @@ export const ContactStyles = styled.section`
   .form__submit {
     color: #333;
     align-self: flex-start;
+    font-family: 'Montserrat', sans-serif;
     padding: 8px;
     background-color: #aaa;
     font-size: 1.5rem;
