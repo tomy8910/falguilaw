@@ -14,12 +14,9 @@ export const MainStyles = styled.main`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* padding: 2rem;
-  padding-top: 7rem;
-  padding-left: 100px; */
   padding: 15px 60px;
   color: #333;
-  font-family: 'Cardo', serif;
+  font-family: 'Montserrat', sans-serif;
 
   @media (max-width: 50em) {
     padding-left: 4rem;
@@ -29,11 +26,9 @@ export const MainStyles = styled.main`
 
   .main__caption {
     font-size: 4.5rem;
-    /* font-style: italic; */
     margin-bottom: 0;
-    font-family: 'Montserrat', sans-serif;
+
     font-weight: 900;
-    /* animation: ${cool} 2s ease-in forwards; */
   }
 
   @media (max-width: 50em) {
@@ -42,7 +37,6 @@ export const MainStyles = styled.main`
     }
   }
   .main__content {
-    font-family: 'Montserrat', serif;
     font-size: 2rem;
     max-width: 65%;
     line-height: 1.7;
@@ -61,7 +55,6 @@ export const MainStyles = styled.main`
     font-size: 2rem;
     letter-spacing: 0.4px;
     border: 0;
-    border-radius: 1px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     background-color: #072d73;

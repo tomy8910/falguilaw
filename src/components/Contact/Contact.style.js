@@ -5,6 +5,7 @@ export const ContactStyles = styled.section`
   display: flex;
   flex-direction: column;
   color: #333;
+  font-family: 'Montserrat', sans-serif;
 
   @media (min-width: 48em) {
     flex-direction: row;
@@ -147,13 +148,23 @@ export const ContactStyles = styled.section`
   }
 
   .form__submit {
-    color: #333;
     align-self: flex-start;
-    font-family: 'Montserrat', sans-serif;
     padding: 8px;
-    background-color: #aaa;
     font-size: 1.5rem;
     border: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    background-color: #072d73;
+    color: #fff;
+    border-radius: 2px;
+    transition: box-shadow 0.2s, transform 0.2s, background-color 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    &:hover,
+    &:active {
+      transform: translateY(-1px);
+      background-color: #062763;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.18);
+    }
   }
 
   .form__header {
