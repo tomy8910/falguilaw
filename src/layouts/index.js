@@ -21,7 +21,7 @@ const TemplateWrapper = ({ children }) => (
     <Helmet>
       <title>Falgui Law Office</title>
       <link
-        href="https://fonts.googleapis.com/css?family=Cardo:400i|Montserrat:400,500,600,700"
+        href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,600,700,900i"
         rel="stylesheet"
       />
       <meta name="description" content="Sample" />

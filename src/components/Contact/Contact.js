@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
-import { ContactStyles, Label } from './Contact.style'
+import {
+  ContactStyles,
+  Label,
+  DateStyles,
+  ContactNumberStyles
+} from './Contact.style'
 
 function encode(data) {
   return Object.keys(data)
@@ -46,6 +51,58 @@ export default class Contact extends Component {
           </address>
         </div>
         <div className="contact__card">
+          <h1 className="card__header">Our Contact</h1>
+          <ContactNumberStyles>
+            <a href="tel:+63-83-552-4631" className="contact__info-line">
+              083 552 4631
+            </a>
+            <a href="tel:+63-83-552-5580" className="contact__info-line">
+              083 552 5580
+            </a>
+            <a href="tel:+63-917-717-7171" className="contact__info-line">
+              0917 717 7171
+            </a>
+          </ContactNumberStyles>
+        </div>
+        <div className="contact__card">
+          <h1 className="card__header">Our Business Hours</h1>
+          <DateStyles>
+            <div className="card__hour">
+              <h2 className="hour__header">Mon</h2>
+              <time className="time__one">8:30 AM – 12:00 PM</time>
+              <time className="time__two">2:00 – 6:00 PM</time>
+            </div>
+            <div className="card__hour">
+              <h2 className="hour__header">Tue</h2>
+              <time className="time__one">8:30 AM – 12:00 PM</time>
+              <time className="time__two">2:00 – 6:00 PM</time>
+            </div>
+            <div className="card__hour">
+              <h2 className="hour__header">Wed</h2>
+              <time className="time__one">8:30 AM – 12:00 PM</time>
+              <time className="time__two">2:00 – 6:00 PM</time>
+            </div>
+            <div className="card__hour">
+              <h2 className="hour__header">Thu</h2>
+              <time className="time__one">8:30 AM – 12:00 PM</time>
+              <time className="time__two">2:00 – 6:00 PM</time>
+            </div>
+            <div className="card__hour">
+              <h2 className="hour__header">Fri</h2>
+              <time className="time__one">8:30 AM – 12:00 PM</time>
+              <time className="time__two">2:00 – 6:00 PM</time>
+            </div>
+            <div className="card__hour">
+              <h2 className="hour__header">Sat</h2>
+              <time className="time__one">9:00 AM – 12:00 PM</time>
+            </div>
+            <div className="card__hour">
+              <h2 className="hour__header">Sun</h2>
+              <time className="time__one">Closed</time>
+            </div>
+          </DateStyles>
+        </div>
+        <div className="contact__card">
           <h1 className="card__header">Our Location</h1>
           <figure className="card__image-container">
             <img
@@ -64,7 +121,7 @@ export default class Contact extends Component {
           data-netlify-honeypot="bot-field"
           onSubmit={this.handleSubmit}
         >
-          <h1 className="form__header">Contact Us</h1>
+          <h1 className="form__header card__header">Contact Us</h1>
           <div className="form__input-container form__name">
             <input
               type="text"
@@ -104,12 +161,15 @@ export default class Contact extends Component {
               Contact
             </Label>
           </div>
+
           <textarea
             name="input4"
             cols="30"
-            rows="10"
+            rows="8"
             className="form__textarea"
+            placeholder="Message"
           />
+
           <button type="submit" className="form__submit">
             Send Message
           </button>

@@ -20,7 +20,7 @@ export const MainStyles = styled.main`
 
   .main__caption {
     font-size: 4.5rem;
-    font-style: italic;
+    /* font-style: italic; */
     margin-bottom: 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
