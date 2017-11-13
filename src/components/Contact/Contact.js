@@ -5,6 +5,7 @@ import {
   DateStyles,
   ContactNumberStyles
 } from './Contact.style'
+import ReactModal from 'react-modal'
 
 function encode(data) {
   return Object.keys(data)
@@ -15,7 +16,9 @@ export default class Contact extends Component {
   state = {
     input1: '',
     input2: '',
-    input3: ''
+    input3: '',
+    input4: '',
+    open: false
   }
 
   handleSubmit = e => {
@@ -24,7 +27,7 @@ export default class Contact extends Component {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...this.state })
     })
-      .then(() => alert('Success!'))
+      .then(() => this.setState({ open: true }))
       .catch(error => alert(error))
 
     e.preventDefault()
@@ -39,6 +42,72 @@ export default class Contact extends Component {
     const { input1, input2, input3 } = this.state
     return (
       <ContactStyles>
+        <ReactModal
+          isOpen={this.state.open}
+          onRequestClose={() => this.setState({ open: false })}
+          contentLabel="Succes Modal"
+          parentSelector={() => document.body}
+          role="dialog"
+          style={{
+            overlay: {
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(0,0,0,0.5)'
+            },
+            content: {
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%,-50%)',
+              width: '300px',
+              height: '200px',
+              border: '1px solid #ccc',
+              background: '#fff',
+              overflow: 'auto',
+              WebkitOverflowScrolling: 'touch',
+              borderRadius: '4px',
+              outline: 'none',
+              padding: '20px',
+              backgroundColor: '#ccc'
+            }
+          }}
+        >
+          <h1
+            id="heading"
+            style={{ fontSize: '4rem', fontWeight: 700, marginBottom: 0 }}
+          >
+            Success
+          </h1>
+          <div id="full_description">
+            <p
+              style={{
+                marginTop: '5px',
+                fontSize: '2rem',
+                fontWeight: 200,
+                fontFamily: '"Montserrat", sans-serif'
+              }}
+            >
+              Your message was sucessfully sent!
+            </p>
+          </div>
+          <button
+            onClick={() => this.setState({ open: false })}
+            style={{
+              color: '#333',
+              padding: '8px',
+              backgroundColor: '#aaa',
+              fontSize: '1.5rem',
+              border: 0,
+              fontFamily: '"Montserrat", sans-serif'
+            }}
+          >
+            Go Back
+          </button>
+        </ReactModal>
+
         <div className="contact__card">
           <h1 className="card__header">Our Address</h1>
           <address className="card__address">
@@ -165,6 +234,8 @@ export default class Contact extends Component {
           <textarea
             name="input4"
             cols="30"
+            value={this.state.input4}
+            onChange={this.onChange}
             rows="8"
             className="form__textarea"
             placeholder="Message"
