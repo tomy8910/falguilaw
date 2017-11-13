@@ -92,6 +92,7 @@ export const ContactStyles = styled.section`
     border-bottom: 1px solid black;
     background-color: transparent;
     font-size: 2rem;
+    border-radius: 0;
 
     &:focus ~ label {
       top: 0;

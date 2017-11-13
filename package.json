@@ -10,7 +10,7 @@
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-styled-components": "2.0.2",
     "ionicons": "3.0.0",
-    "styled-components": "2.2.3"
+    "styled-components": "2.2.0"
   },
   "keywords": [
     "gatsby"

@@ -22,6 +22,8 @@ export const MainStyles = styled.main`
     font-size: 4.5rem;
     font-style: italic;
     margin-bottom: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
   }
   @media (max-width: 50em) {
     .main__caption {

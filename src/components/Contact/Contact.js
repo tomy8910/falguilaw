@@ -104,6 +104,12 @@ export default class Contact extends Component {
               Contact
             </Label>
           </div>
+          <textarea
+            name="input4"
+            cols="30"
+            rows="10"
+            className="form__textarea"
+          />
           <button type="submit" className="form__submit">
             Send Message
           </button>

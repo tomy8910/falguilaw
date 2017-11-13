@@ -85,7 +85,7 @@ export default class Header extends Component {
                       d="M3.153 4.332l18.694 17.336m-18.694 0L21.847 4.332"
                       fill="none"
                       stroke="#000"
-                      strokeWidth={6}
+                      strokeWidth={4}
                     />
                   </svg>
                 </div>

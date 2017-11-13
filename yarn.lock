@@ -7211,9 +7211,9 @@ style-loader@^0.13.0:
   dependencies:
     loader-utils "^1.0.2"
 
-styled-components@2.2.3:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-2.2.3.tgz#154575c269880c840f903f580287dab155cf684c"
+styled-components@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-2.2.0.tgz#23823d305b1929723f927837735fdc2431545956"
   dependencies:
     buffer "^5.0.3"
     css-to-react-native "^2.0.3"
@@ -7222,12 +7222,12 @@ styled-components@2.2.3:
     is-function "^1.0.1"
     is-plain-object "^2.0.1"
     prop-types "^15.5.4"
-    stylis "3.x"
+    stylis "^3.2.1"
     supports-color "^3.2.3"
 
-stylis@3.x:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/stylis/-/stylis-3.4.0.tgz#55c6530ebceeca5976d54fb4adc67578afee828d"
+stylis@^3.2.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/stylis/-/stylis-3.4.1.tgz#46896ff4c51fbb58e44815eae5e0b2180a1f1fcb"
 
 supports-color@^2.0.0:
   version "2.0.0"
