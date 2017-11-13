@@ -33,7 +33,7 @@ export const MainStyles = styled.main`
     margin-bottom: 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    animation: ${cool} 2s ease-in forwards;
+    /* animation: ${cool} 2s ease-in forwards; */
   }
 
   @media (max-width: 50em) {
@@ -69,7 +69,8 @@ export const MainStyles = styled.main`
     border-radius: 2px;
     transition: box-shadow 0.2s, transform 0.2s, background-color 0.2s;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-    &:hover {
+    &:hover,
+    &:active {
       transform: translateY(-1px);
       background-color: #062763;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.18);
