@@ -1,4 +1,13 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const cool = keyframes`
+0% {
+  opacity:0;
+}
+100% {
+  opacity:100%;
+}
+`
 
 export const MainStyles = styled.main`
   background-color: #bbbbbb;
@@ -24,7 +33,9 @@ export const MainStyles = styled.main`
     margin-bottom: 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
+    animation: ${cool} 2s ease-in forwards;
   }
+
   @media (max-width: 50em) {
     .main__caption {
       font-size: 2.5rem;
