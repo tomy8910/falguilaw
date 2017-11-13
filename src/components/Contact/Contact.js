@@ -262,7 +262,7 @@ export default class Contact extends Component {
             <p className="card__address-line">2nd Floor, Falgui Building</p>
             <p className="card__address-line">National Highway</p>
             <p className="card__address-line">General Santos City</p>
-            <p className="card__address-line">9500 South Cotabato</p>
+            <p className="card__address-line">9500</p>
             <p className="card__address-line">Philippines</p>
           </address>
         </div>
@@ -270,13 +270,10 @@ export default class Contact extends Component {
           <h1 className="card__header">Our Contact</h1>
           <ContactNumberStyles>
             <a href="tel:+63-83-552-4631" className="contact__info-line">
-              083 552 4631
-            </a>
-            <a href="tel:+63-83-552-5580" className="contact__info-line">
-              083 552 5580
+              +6383 552 4631
             </a>
             <a href="tel:+63-917-717-7171" className="contact__info-line">
-              0917 717 7171
+              +63917 717 7171
             </a>
           </ContactNumberStyles>
         </div>
