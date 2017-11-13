@@ -14,11 +14,13 @@ function encode(data) {
 }
 export default class Contact extends Component {
   state = {
-    input1: '',
-    input2: '',
-    input3: '',
-    input4: '',
-    open: false
+    name: '',
+    email: '',
+    contact: '',
+    message: '',
+    open: false,
+    error: false,
+    errorOpen: false
   }
 
   handleSubmit = e => {
@@ -30,13 +32,16 @@ export default class Contact extends Component {
       .then(() =>
         this.setState({
           open: true,
-          input1: '',
-          input2: '',
-          input3: '',
-          input4: ''
+          name: '',
+          email: '',
+          contact: '',
+          message: '',
+          error: false
         })
       )
-      .catch(error => alert(error))
+      .catch(error =>
+        this.setState({ error: true }, () => this.setState({ errorOpen: true }))
+      )
 
     e.preventDefault()
     e.preventDefault()
@@ -48,9 +53,142 @@ export default class Contact extends Component {
     })
   }
   render() {
-    const { input1, input2, input3 } = this.state
+    const { name, message, contact, email, error } = this.state
     return (
       <ContactStyles>
+        {!error ? (
+          <ReactModal
+            isOpen={this.state.open}
+            onRequestClose={() => this.setState({ open: false })}
+            contentLabel="Succes Modal"
+            parentSelector={() => document.body}
+            role="dialog"
+            style={{
+              overlay: {
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundColor: 'rgba(0,0,0,0.5)'
+              },
+              content: {
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%,-50%)',
+                width: '300px',
+                height: '200px',
+                border: '1px solid #ccc',
+                background: '#fff',
+                overflow: 'auto',
+                WebkitOverflowScrolling: 'touch',
+                borderRadius: '4px',
+                outline: 'none',
+                padding: '20px',
+                backgroundColor: '#ccc'
+              }
+            }}
+          >
+            <h1
+              id="heading"
+              style={{ fontSize: '4rem', fontWeight: 700, marginBottom: 0 }}
+            >
+              Success
+            </h1>
+            <div id="full_description">
+              <p
+                style={{
+                  marginTop: '5px',
+                  fontSize: '2rem',
+                  fontWeight: 200,
+                  fontFamily: '"Montserrat", sans-serif'
+                }}
+              >
+                Your message was sucessfully sent!
+              </p>
+            </div>
+            <button
+              onClick={() => this.setState({ open: false })}
+              style={{
+                color: '#333',
+                padding: '8px',
+                backgroundColor: '#aaa',
+                fontSize: '1.5rem',
+                border: 0,
+                fontFamily: '"Montserrat", sans-serif'
+              }}
+            >
+              Go Back
+            </button>
+          </ReactModal>
+        ) : (
+          <ReactModal
+            isOpen={this.state.errorOpen}
+            onRequestClose={() => this.setState({ errorOpen: false })}
+            contentLabel="Succes Modal"
+            parentSelector={() => document.body}
+            role="dialog"
+            style={{
+              overlay: {
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundColor: 'rgba(0,0,0,0.5)'
+              },
+              content: {
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%,-50%)',
+                width: '300px',
+                height: '200px',
+                border: '1px solid #ccc',
+                background: '#fff',
+                overflow: 'auto',
+                WebkitOverflowScrolling: 'touch',
+                borderRadius: '4px',
+                outline: 'none',
+                padding: '20px',
+                backgroundColor: '#ccc'
+              }
+            }}
+          >
+            <h1
+              id="heading"
+              style={{ fontSize: '4rem', fontWeight: 700, marginBottom: 0 }}
+            >
+              Error
+            </h1>
+            <div id="full_description">
+              <p
+                style={{
+                  marginTop: '5px',
+                  fontSize: '2rem',
+                  fontWeight: 200,
+                  fontFamily: '"Montserrat", sans-serif'
+                }}
+              >
+                Please send your message again!
+              </p>
+            </div>
+            <button
+              onClick={() => this.setState({ errorOpen: false })}
+              style={{
+                color: '#333',
+                padding: '8px',
+                backgroundColor: '#aaa',
+                fontSize: '1.5rem',
+                border: 0,
+                fontFamily: '"Montserrat", sans-serif'
+              }}
+            >
+              Try Again
+            </button>
+          </ReactModal>
+        )}
         <ReactModal
           isOpen={this.state.open}
           onRequestClose={() => this.setState({ open: false })}
@@ -205,11 +343,11 @@ export default class Contact extends Component {
               type="text"
               id="name"
               className="form__input"
-              value={input1}
-              name="input1"
+              value={name}
+              name="name"
               onChange={this.onChange}
             />
-            <Label htmlFor="name" full={input1 !== ''}>
+            <Label htmlFor="name" full={name !== ''}>
               Name
             </Label>
           </div>
@@ -218,11 +356,11 @@ export default class Contact extends Component {
               type="email"
               id="email"
               className="form__input"
-              value={input2}
-              name="input2"
+              value={email}
+              name="email"
               onChange={this.onChange}
             />
-            <Label htmlFor="email" full={input2 !== ''}>
+            <Label htmlFor="email" full={email !== ''}>
               Email
             </Label>
           </div>
@@ -231,19 +369,19 @@ export default class Contact extends Component {
               type="text"
               id="number"
               className="form__input"
-              name="input3"
-              value={input3}
+              name="contact"
+              value={contact}
               onChange={this.onChange}
             />
-            <Label htmlFor="number" full={input3 !== ''}>
+            <Label htmlFor="number" full={contact !== ''}>
               Contact
             </Label>
           </div>
 
           <textarea
-            name="input4"
+            name="message"
             cols="30"
-            value={this.state.input4}
+            value={message}
             onChange={this.onChange}
             rows="8"
             className="form__textarea"
