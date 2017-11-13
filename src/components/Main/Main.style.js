@@ -35,6 +35,7 @@ export const MainStyles = styled.main`
     font-size: 2rem;
     max-width: 65%;
     line-height: 1.7;
+    color: #333;
     margin-bottom: 3rem;
   }
   @media (max-width: 50em) {
@@ -45,15 +46,23 @@ export const MainStyles = styled.main`
   }
   .main__button {
     width: 150px;
-    padding: 1.7rem;
+    padding: 1.4rem;
     font-size: 2rem;
     letter-spacing: 0.4px;
     border: 0;
-    box-shadow: 0;
-    background-color: #cccccc;
     border-radius: 1px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
+    background-color: #072d73;
+    color: #fff;
+    border-radius: 2px;
+    transition: box-shadow 0.2s, transform 0.2s, background-color 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    &:hover {
+      transform: translateY(-1px);
+      background-color: #062763;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.18);
+    }
 
     @media (max-width: 50em) {
       width: 100px;
@@ -62,6 +71,5 @@ export const MainStyles = styled.main`
   }
   .main__button-link {
     text-decoration: none;
-    color: #333;
   }
 `

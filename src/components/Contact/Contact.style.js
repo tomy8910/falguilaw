@@ -5,10 +5,52 @@ export const ContactStyles = styled.section`
   display: flex;
   flex-direction: column;
   color: #333;
-  @media (min-width: 50em) {
-    display: block;
 
-    .contact__form {
+  @media (min-width: 48em) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px;
+
+    .contact__form,
+    .contact__card--address,
+    .contact__card--numbers,
+    .contact__card--hours,
+    .contact__card--location {
+      flex-grow: 1;
+      flex-basis: calc(50%);
+    }
+  }
+  .contact__form {
+    flex-grow: 0;
+    order: 1;
+  }
+  /* .contact__card--address {
+    }
+    .contact__card--numbers {
+    } */
+  .contact__card--hours {
+    order: 1;
+  }
+  /* .contact__card--location {
+    } */
+
+  @media (min-width: 250em) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px;
+
+    .contact__form,
+    .contact__card--address,
+    .contact__card--numbers,
+    .contact__card--hours,
+    .contact__card--location {
+      flex-grow: 1;
+      flex-basis: calc(50% - 130px);
+      margin-left: 130px;
     }
   }
 
@@ -28,7 +70,7 @@ export const ContactStyles = styled.section`
       content: '';
       display: block;
       width: 200px;
-      border-bottom: 4px solid hsl(10, 90%, 4%);
+      border-bottom: 4px solid #333;
     }
   }
 

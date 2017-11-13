@@ -6,7 +6,7 @@ export const PracticeStyles = styled.section`
   /* padding: 50px 50px; */
   padding: 50px 60px;
   background-color: #bbbbbb;
-
+  color: #333;
   @media (max-width: 50em) {
     padding-left: 2rem;
     padding-bottom: 6rem;

@@ -3,11 +3,11 @@ import styled from 'styled-components'
 export const AboutStyles = styled.main`
   background-color: #bbbbbb;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   overflow: scroll;
   padding: 15px 60px;
   flex-direction: column;
-  /* /align-items: center; */
+  /* align-items: center; */
   font-size: 2rem;
   @media (max-width: 50em) {
     padding: 15px 20px;
@@ -43,10 +43,12 @@ export const AboutStyles = styled.main`
     font-weight: 400;
     font-weight: 900;
     margin-bottom: 0.5rem;
+    color: #333;
   }
 
   .about__p {
     margin-top: 0;
+    color: #333;
   }
 
   .about__p--bot-m {

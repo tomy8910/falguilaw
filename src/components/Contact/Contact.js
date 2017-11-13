@@ -255,7 +255,7 @@ export default class Contact extends Component {
           </button>
         </ReactModal>
 
-        <div className="contact__card">
+        <div className="contact__card contact__card--address">
           <h1 className="card__header">Our Address</h1>
           <address className="card__address">
             <p className="card__address-line">Falgui Law Offices</p>
@@ -266,7 +266,7 @@ export default class Contact extends Component {
             <p className="card__address-line">Philippines</p>
           </address>
         </div>
-        <div className="contact__card">
+        <div className="contact__card contact__card--numbers">
           <h1 className="card__header">Our Contact</h1>
           <ContactNumberStyles>
             <a href="tel:+63-83-552-4631" className="contact__info-line">
@@ -280,7 +280,7 @@ export default class Contact extends Component {
             </a>
           </ContactNumberStyles>
         </div>
-        <div className="contact__card">
+        <div className="contact__card contact__card--hours">
           <h1 className="card__header">Our Business Hours</h1>
           <DateStyles>
             <div className="card__hour">
@@ -318,7 +318,7 @@ export default class Contact extends Component {
             </div>
           </DateStyles>
         </div>
-        <div className="contact__card">
+        <div className="contact__card contact__card--location">
           <h1 className="card__header">Our Location</h1>
           <figure className="card__image-container">
             <img
@@ -387,7 +387,6 @@ export default class Contact extends Component {
             className="form__textarea"
             placeholder="Message"
           />
-
           <button type="submit" className="form__submit">
             Send Message
           </button>
