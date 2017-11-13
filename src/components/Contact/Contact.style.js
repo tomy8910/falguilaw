@@ -22,7 +22,7 @@ export const ContactStyles = styled.section`
       content: '';
       display: block;
       width: 200px;
-      border-bottom: 8px solid hsl(10, 90%, 4%);
+      border-bottom: 4px solid hsl(10, 90%, 4%);
     }
   }
 
