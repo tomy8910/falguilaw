@@ -7,6 +7,9 @@ import styled, { injectGlobal } from 'styled-components'
 import Footer from '../components/Footer/Footer'
 import WebFont from 'webfontloader'
 import favicon from '../favicon.ico'
+import png16 from '../slice3@3x.png'
+import png32 from '../slice4@3x.png'
+import png96 from '../slice5@3x.png'
 
 const Wrapper = styled.div`
   display: flex;
@@ -35,6 +38,9 @@ class TemplateWrapper extends React.Component {
           <meta name="keywords" content="sample, something" />
           <link rel="shortcut icon" href={favicon} type="image/x-icon" />
           <link rel="icon" href={favicon} type="image/x-icon" />
+          <link rel="icon" type="image/png" sizes="16x16" href={png16} />
+          <link rel="icon" type="image/png" sizes="32x32" href={png32} />
+          <link rel="icon" type="image/png" sizes="96x96" href={png96} />
         </Helmet>
         <Wrapper>
           <Header />
