@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`
+    title: `Falgui Law Offices`,
+    siteUrl: 'https://www.explorer-vivian-34063.com/'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
