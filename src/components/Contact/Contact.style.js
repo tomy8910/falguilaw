@@ -159,12 +159,17 @@ export const ContactStyles = styled.section`
     border-radius: 2px;
     transition: box-shadow 0.2s, transform 0.2s, background-color 0.2s;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+
     &:hover,
     &:active {
       transform: translateY(-1px);
       background-color: #062763;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.18);
     }
+  }
+  .form__submit--disabled,
+  .form__submit--disabled:hover {
+    background-color: #0c4cc3;
   }
 
   .form__header {

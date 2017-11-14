@@ -20,28 +20,40 @@ export default class Contact extends Component {
     message: '',
     open: false,
     error: false,
-    errorOpen: false
+    errorOpen: false,
+    loading: false
   }
 
   handleSubmit = e => {
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...this.state })
+    this.setState({ loading: true }, () => {
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({ 'form-name': 'contact', ...this.state })
+      })
+        .then(() =>
+          this.setState(
+            {
+              open: true,
+              name: '',
+              email: '',
+              contact: '',
+              message: '',
+              error: false
+            },
+            () => {
+              this.setState({ loading: false })
+            }
+          )
+        )
+        .catch(error =>
+          this.setState({ error: true }, () =>
+            this.setState({ errorOpen: true }, () => {
+              this.setState({ loading: false })
+            })
+          )
+        )
     })
-      .then(() =>
-        this.setState({
-          open: true,
-          name: '',
-          email: '',
-          contact: '',
-          message: '',
-          error: false
-        })
-      )
-      .catch(error =>
-        this.setState({ error: true }, () => this.setState({ errorOpen: true }))
-      )
 
     e.preventDefault()
     e.preventDefault()
@@ -384,7 +396,12 @@ export default class Contact extends Component {
             className="form__textarea"
             placeholder="Message"
           />
-          <button type="submit" className="form__submit">
+          <button
+            type="submit"
+            className={`form__submit ${this.state.loading &&
+              'form__submit--disabled'}`}
+            disabled={this.state.loading}
+          >
             Send Message
           </button>
         </form>
